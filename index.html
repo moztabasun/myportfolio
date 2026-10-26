@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moztaba Rafid | Portfolio</title>
+  <style>
+    /* Reset & Base Styling */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #f8f9fa;
+      padding: 20px;
+    }
+
+    /* Main Card Container */
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    /* Centered Header Navigation */
+    header {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    header h2 {
+      font-size: 2rem;
+      color: #1a1a1a;
+      margin-bottom: 10px;
+    }
+
+    nav {
+      font-size: 1.05rem;
+    }
+
+    nav a {
+      color: #8905d0a3;
+      text-decoration: none;
+      font-weight: 600;
+      margin: 0 8px;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    hr {
+      border: 0;
+      height: 1px;
+      background: #e0e0e0;
+      margin: 30px 0;
+    }
+
+    /* Centered Hero Section */
+    .hero {
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 2.2rem;
+      color: #1a1a1a;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    .profile-img {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid #7f8183;
+      margin-top: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Left-aligned Content Sections */
+    section {
+      text-align: left;
+    }
+
+    section h2 {
+      font-size: 1.6rem;
+      color: #1a1a1a;
+      margin-bottom: 15px;
+      border-bottom: 2px solid #0cd664;
+      display: inline-block;
+      padding-bottom: 4px;
+    }
+
+    /* Left-aligned Project Cards */
+    .project-item {
+      margin-bottom: 25px;
+      background: #f1f5f9;
+      padding: 18px;
+      border-left: 4px solid #b0404094;
+      border-radius: 0 8px 8px 0;
+    }
+
+    .project-item h3 {
+      font-size: 1.25rem;
+      color: #222;
+      margin-bottom: 8px;
+    }
+
+    .project-item p {
+      color: #444;
+      margin-bottom: 6px;
+    }
+
+    /* Skills Categorized List */
+    .skill-category {
+      margin-bottom: 18px;
+    }
+
+    .skill-category h3 {
+      font-size: 1.1rem;
+      color: #0066cc;
+      margin-bottom: 6px;
+    }
+
+    ul.skills-list {
+      list-style-type: square;
+      padding-left: 25px;
+    }
+
+    ul.skills-list li {
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+      color: #333;
+    }
+
+    /* Centered Button Links */
+    .btn {
+      display: inline-block;
+      background-color: #4d0707;
+      color: #ffffff;
+      padding: 10px 22px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background-color 0.2s ease;
+    }
+
+    .btn:hover {
+      background-color: #6858e2;
+    }
+
+    /* Compact Contact Section */
+    .contact-section {
+      text-align: center;
+    }
+
+    .contact-section h2 {
+      margin-bottom: 10px;
+    }
+
+    .contact-info {
+      font-size: 0.95rem;
+      color: #555;
+      margin-bottom: 8px;
+    }
+
+    .contact-links {
+      font-size: 0.95rem;
+    }
+
+    .contact-links a {
+      color: #8905d0a3;
+      text-decoration: none;
+      font-weight: 600;
+      margin: 0 6px;
+    }
+
+    .contact-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* Centered Footer */
+    footer {
+      text-align: center;
+      color: #777;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Header Section (Centered Navigation) -->
+    <header>
+      <h2>Moztaba Rafid</h2>
+      <nav>
+        <a href="#about">About</a> |
+        <a href="#projects">Projects</a> |
+        <a href="#skills">Skills</a> |
+        <a href="#hobbies">Hobbies</a> |
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <hr>
+
+    <!-- Hero Section (Centered Profile & Intro) -->
+    <section class="hero">
+      <h1>Hi, I'm Moztaba Rafid</h1>
+      <p>Electrical & Electronic Engineering (EEE) Student at University of Asia Pacific (UAP)<br>Focused on Embedded Systems, Hardware Engineering & Applied Electronics.</p>
+      
+      <!-- Profile Image from local 'images' folder -->
+      <img class="profile-img" src="images/sun.jpeg" alt="Moztaba Rafid">
+      
+      <br><br>
+      <a href="#projects" class="btn">View Projects</a>
+    </section>
+
+    <hr>
+
+    <!-- About Section -->
+    <section id="about">
+      <h2>About Me</h2>
+      <p>I am a 2nd-year <b>Electrical and Electronic Engineering (EEE)</b> student at the <b>University of Asia Pacific (UAP)</b>. I focus on combining C++ programming with circuit design and simulation tools like PSpice and MATLAB to build robotics and software systems. Additionally, I hold a <b>National Skills Certificate in Mobile Phone Servicing (Level-1)</b> certified by NSDA.</p>
+    </section>
+
+    <hr>
+
+    <!-- Projects Section (Left Aligned Cards) -->
+    <section id="projects">
+      <h2>Projects</h2>
+
+      <div class="project-item">
+        <h3>1. Line Following Robot (LFR)</h3>
+        <p>Autonomous high-speed line tracing robot built with custom IR sensor arrays, PID motor control algorithms, and a lightweight chassis design.</p>
+        <p><b>Tags:</b> Embedded C++, Arduino, PID Control, Hardware Design</p>
+      </div>
+
+      <div class="project-item">
+        <h3>2. Bank Account Management System</h3>
+        <p>Console-based financial management software featuring secure user authentication, real-time account creation, balance tracking, transaction logs, and file handling for data persistence.</p>
+        <p><b>Tags:</b> C++, OOP, Data Structures, File Handling</p>
+      </div>
+    </section>
+
+    <hr>
+
+    <!-- Skills Section (Categorized Technical Skills & Certifications) -->
+    <section id="skills">
+      <h2>Technical Skills & Certifications</h2>
+
+      <div class="skill-category">
+        <h3>Programming & Core CS</h3>
+        <ul class="skills-list">
+          <li>C / C++ (Object-Oriented Programming, File I/O)</li>
+        </ul>
+      </div>
+
+      <div class="skill-category">
+        <h3>Simulation & Engineering Tools</h3>
+        <ul class="skills-list">
+          <li>PSpice (Analog & Circuit Simulation)</li>
+          <li>MATLAB (Mathematical Modeling & Analysis)</li>
+        </ul>
+      </div>
+
+      <div class="skill-category">
+        <h3>Hardware Servicing & Certifications</h3>
+        <ul class="skills-list">
+          <li><b>National Skills Certificate:</b> Mobile Phone Servicing, Level-1 (NSDA / BNQF)</li>
+          <li>Hardware Component Testing, Soldering & De-Soldering</li>
+          <li>Mobile Phone Disassembly, Reassembly & Basic Software Flashing</li>
+          <li>Occupational Safety and Health (OSH) Procedures in Electronics Workspace</li>
+        </ul>
+      </div>
+    </section>
+
+    <hr>
+
+    <!-- Hobbies Section -->
+    <section id="hobbies">
+      <h2>Hobbies & Interests</h2>
+      <ul class="skills-list">
+         <li>Football</li>
+         <li>Badminton</li>
+        <li>Cricket</li>
+        <li>Traveling</li>
+      </ul>
+    </section>
+
+    <hr>
+
+    <!-- Compact Contact Section -->
+    <section id="contact" class="contact-section">
+      <h2>Contact</h2>
+      <p class="contact-info">Dept. of EEE | University of Asia Pacific (UAP)</p>
+      <p class="contact-links">
+        <a href="mailto:moztaba@gmail.com">Email</a> • 
+        <a href="https://linkedin.com" target="_blank">LinkedIn</a> • 
+        <a href="https://github.com/moztabasun" target="_blank">GitHub</a>
+      </p>
+    </section>
+
+    <hr>
+
+    <!-- Footer Section (Centered Copyright) -->
+    <footer>
+      <p>&copy; 2026 Moztaba Rafid. All rights reserved.</p>
+    </footer>
+
+  </div>
+
+</body>
+</html>
