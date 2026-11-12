@@ -987,8 +987,8 @@ svg { display: block; }
 .cert__top {
   display: flex;
   align-items: baseline;
-  flex-wrap: wrap;
-  gap: 4px 12px;
+  justify-content: space-between;
+  gap: 12px;
   margin-bottom: 3px;
 }
 
