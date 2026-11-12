@@ -1,71 +1,53 @@
-<div align="center">
+# Moztaba Rafid — Portfolio
 
-  #  Moztaba Rafid — Portfolio
+Personal portfolio of Md Moztaba Rafid, an Electrical & Electronic Engineering
+student at the University of Asia Pacific (UAP), Dhaka.
 
-  <p align="center">
-    <b>Electrical & Electronic Engineering Student @ University of Asia Pacific (UAP)</b><br>
-    <i>Specializing in Embedded Systems, Hardware Engineering & Applied Electronics</i>
-  </p>
+Live site: <https://moztabasun.github.io/myportfolio/>
 
-  <p align="center">
-    🌐 <b>Live Portfolio:</b> <a href="https://moztabasun.github.io/myportfolio/">moztabasun.github.io/myportfolio</a>
-  </p>
+## What's here
 
-  <!-- Badges -->
-  <p align="center">
-    <a href="https://github.com/moztabasun">
-      <img src="https://img.shields.io/badge/GitHub-moztabasun-181717?style=for-the-badge&logo=github" alt="GitHub">
-    </a>
-    <a href="https://linkedin.com">
-      <img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin" alt="LinkedIn">
-    </a>
-  </p>
+- `index.html` — page markup and content
+- `css/style.css` — layout, theme tokens, glass surfaces, responsive rules
+- `js/main.js` — theme toggle, nav state, mobile menu, reveals, project tilt
+- `images/sun.jpeg` — profile photo
 
-</div>
+No framework, no build step. Plain HTML, CSS and JavaScript, served statically.
 
----
+## Features
 
-## 📌 Overview
+- Dark and light themes, remembered in `localStorage`
+- Glass navbar and card surfaces
+- Scroll progress bar and active-section highlighting
+- Responsive layout down to small phones
+- Reduced-motion and print styles
+- Copy-email button with a toast confirmation
 
-Welcome to my personal portfolio website repository! This project is a minimalist, responsive, and lightweight single-page website built with pure **HTML5** and **CSS3**. It highlights my academic background, technical engineering projects, hardware certifications, and technical skill set.
+## Local preview
 
----
+Open `index.html` directly in a browser, or serve the folder:
 
-## 🚀 Technical Tech Stack & Tools
+```sh
+python -m http.server 8000
+```
 
-| Category | Skills / Tools |
-| :--- | :--- |
-| **Programming** | Embedded C, C++, Python |
-| **Simulation & EDA** | PSpice, MATLAB |
-| **Hardware & Electronics** | Microcontrollers (Arduino), Sensor Interfacing, Soldering & Hardware Diagnostics |
-| **Certifications** | National Skills Certificate in Mobile Hardware Technology (Level-1, NSDA) |
-| **Web Basics** | HTML5, CSS3 |
+Then visit <http://localhost:8000>.
 
----
+## Deploying to GitHub Pages
 
-## 🛠️ Featured Projects
+1. Push the folder to the `main` branch of the repository.
+2. In the repository settings, open **Pages**.
+3. Set the source to **Deploy from a branch**, branch `main`, folder `/ (root)`.
 
-### 🤖 1. Line Following Robot (LFR)
-* **Description:** An autonomous high-speed tracking robot engineered with high-precision IR sensor arrays, tuned PID motor control algorithms, and a lightweight chassis design.
-* **Tech Stack:** `Embedded C++` `Arduino` `PID Control` `Hardware Design`
+The site is served at `https://moztabasun.github.io/myportfolio/`.
 
-### 🏦 2. Bank Account Management System
-* **Description:** A console-based financial software system supporting secure account creation, real-time balance tracking, transaction history logging, and file I/O operations for data persistence.
-* **Tech Stack:** `C++` `OOP` `Data Structures` `File Handling`
+## Editing notes
 
----
-
-## 📜 Certifications & Achievements
-
-* **National Skills Certificate — Level 1**: Mobile Hardware Technology (Certified by NSDA / BNQF)
-* **Core Competencies:** Hardware Diagnostics, Precision Soldering/De-Soldering, Circuit Component Testing, and Workplace Safety (OSH) Compliance.
-
----
-
-## 📁 Repository Structure
-
-```text
-├── index.html       # Main HTML portfolio file with integrated CSS styling
-├── images/          # Assets folder
-│   └── sun.jpeg     # Profile image
-└── README.md        # Project documentation
+- Content lives in `index.html`; sections are plain `<section>` blocks with IDs
+  that match the navbar links.
+- Colors and glass values are CSS custom properties at the top of
+  `css/style.css` (`:root` for dark, `[data-theme="light"]` for light).
+- The theme is set before first paint by the inline script in `index.html` to
+  avoid a flash of the wrong theme.
+- Keep the `reveal` class off elements you always want visible; elements with
+  it start hidden until they scroll into view.
