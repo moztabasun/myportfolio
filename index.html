@@ -3,27 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Md Moztaba Rafid — EEE Student · Robotics & Embedded Systems</title>
-  <meta name="description" content="Portfolio of Md Moztaba Rafid — Electrical & Electronic Engineering student at University of Asia Pacific. Embedded systems, robotics, Arduino, ESP32, Raspberry Pi, C/C++, Python and MATLAB." />
+  <title>Md Moztaba Rafid — EEE Student · Robotics &amp; Embedded Systems</title>
+  <meta name="description" content="Portfolio of Md Moztaba Rafid — Electrical &amp; Electronic Engineering student at University of Asia Pacific. Embedded systems, robotics, Arduino, ESP32, Raspberry Pi, C/C++, Python and MATLAB." />
   <meta name="author" content="Md Moztaba Rafid" />
-  <meta name="theme-color" content="#07080c" />
+  <meta name="theme-color" content="#141310" />
   <meta name="color-scheme" content="dark light" />
   <link rel="canonical" href="https://moztabasun.github.io/myportfolio/" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Md Moztaba Rafid — Robotics & Embedded Systems" />
+  <meta property="og:title" content="Md Moztaba Rafid — Robotics &amp; Embedded Systems" />
   <meta property="og:description" content="EEE student at UAP building embedded systems and robots with Arduino, ESP32, Raspberry Pi and C/C++." />
   <meta property="og:image" content="https://moztabasun.github.io/myportfolio/images/sun.jpeg" />
   <meta property="og:url" content="https://moztabasun.github.io/myportfolio/" />
 
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='34' fill='%2322d3ee'/%3E%3C/svg%3E" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23c63a22'/%3E%3Cpath d='M50 24v52M24 50h52' stroke='%23f8f3e7' stroke-width='6'/%3E%3C/svg%3E" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-
-  <link rel="preload" as="image" href="images/sun.jpeg" fetchpriority="high" />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=B612+Mono:wght@400;700&family=Saira+Condensed:wght@500;600;700&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="css/style.css" />
 
@@ -64,491 +62,942 @@
 
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- Decorative background -->
-  <div class="bg" aria-hidden="true">
-    <div class="bg__grid"></div>
-    <div class="bg__glow bg__glow--1"></div>
-    <div class="bg__glow bg__glow--2"></div>
-    <div class="bg__glow bg__glow--3"></div>
-    <div class="bg__noise"></div>
-  </div>
+  <div class="sheet" id="sheet">
 
-  <!-- Scroll progress -->
-  <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+    <!-- ===== NAV ===== -->
+    <header class="nav" id="nav">
+      <div class="nav__inner">
+        <a class="brand" href="#top" aria-label="Md Moztaba Rafid — back to top">
+          <span class="brand__mark" aria-hidden="true">MR</span>
+          <span class="brand__text">
+            <span class="brand__name">Moztaba Rafid</span>
+            <span class="brand__role">EEE · UAP · DHAKA</span>
+          </span>
+        </a>
 
-  <!-- ===== NAVBAR ===== -->
-  <header class="nav" id="nav">
-    <div class="nav__inner">
-      <a class="brand" href="#top">
-        <span class="brand__name">Moztaba Rafid</span>
-        <span class="brand__role">EEE · UAP</span>
-      </a>
+        <nav class="nav__links" id="navLinks" aria-label="Primary">
+          <a href="#about"><span aria-hidden="true">01</span>About</a>
+          <a href="#experience"><span aria-hidden="true">02</span>Experience</a>
+          <a href="#projects"><span aria-hidden="true">03</span>Projects</a>
+          <a href="#skills"><span aria-hidden="true">04</span>Skills</a>
+          <a href="#education"><span aria-hidden="true">05</span>Education</a>
+          <a href="#notes"><span aria-hidden="true">06</span>Notes</a>
+          <a class="nav__contact" href="#contact" aria-label="Contact" title="Contact">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.6a8.4 8.4 0 0 1-9 8.3 9.7 9.7 0 0 1-3.8-.7L3 21l1.9-5.2a8.3 8.3 0 0 1-1-3.9A8.4 8.4 0 0 1 12.4 3 8.4 8.4 0 0 1 21 11.6Z"/></svg>
+          </a>
+        </nav>
 
-      <nav class="nav__links" id="navLinks" aria-label="Primary">
-        <a href="#about">About</a>
-        <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
-        <a href="#education">Education</a>
-        <a href="#contact">Contact</a>
+        <div class="nav__actions">
+          <button class="icon-btn" id="themeToggle" type="button" aria-label="Toggle color theme" aria-pressed="false">
+            <svg class="icon icon--sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.6M12 18.9v2.6M2.5 12h2.6M18.9 12h2.6M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M18.7 5.3l-1.8 1.8M7.1 16.9l-1.8 1.8"/></svg>
+            <svg class="icon icon--moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.2A8.6 8.6 0 1 1 9.8 3.5a7 7 0 0 0 10.7 10.7Z"/></svg>
+          </button>
+          <a class="icon-btn icon-btn--sm nav__cta" href="mailto:moztabarafid@gmail.com" aria-label="Email me" title="Email me">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m3.6 7 8.4 6 8.4-6"/></svg>
+          </a>
+          <button class="icon-btn nav__burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+      <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+    </header>
+
+    <!-- Mobile menu -->
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true" inert>
+      <nav aria-label="Mobile">
+        <a href="#about"><span aria-hidden="true">01</span>About</a>
+        <a href="#experience"><span aria-hidden="true">02</span>Experience</a>
+        <a href="#projects"><span aria-hidden="true">03</span>Projects</a>
+        <a href="#skills"><span aria-hidden="true">04</span>Skills</a>
+        <a href="#education"><span aria-hidden="true">05</span>Education</a>
+        <a href="#notes"><span aria-hidden="true">06</span>Notes</a>
+        <a href="#contact"><span aria-hidden="true">07</span>Contact</a>
       </nav>
-
-      <div class="nav__actions">
-        <button class="icon-btn" id="themeToggle" type="button" aria-label="Toggle color theme" aria-pressed="false">
-          <svg class="icon icon--sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.6M12 18.9v2.6M2.5 12h2.6M18.9 12h2.6M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M18.7 5.3l-1.8 1.8M7.1 16.9l-1.8 1.8"/></svg>
-          <svg class="icon icon--moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.2A8.6 8.6 0 1 1 9.8 3.5a7 7 0 0 0 10.7 10.7Z"/></svg>
-        </button>
-        <a class="btn btn--sm btn--primary nav__cta" href="mailto:moztabarafid@gmail.com">Email me</a>
-        <button class="icon-btn nav__burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
-          <span></span><span></span><span></span>
-        </button>
+      <div class="mobile-menu__foot">
+        <a href="mailto:moztabarafid@gmail.com">moztabarafid@gmail.com</a>
+        <a href="https://www.linkedin.com/in/moztabarafid" target="_blank" rel="noopener">LinkedIn <span aria-hidden="true">↗</span></a>
+        <span class="mobile-menu__loc" lang="bn">ঢাকা, বাংলাদেশ</span>
       </div>
     </div>
-  </header>
 
-  <!-- Mobile menu -->
-  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
-    <nav aria-label="Mobile">
-      <a href="#about">About</a>
-      <a href="#experience">Experience</a>
-      <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
-      <a href="#education">Education</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <div class="mobile-menu__foot">
-      <a href="mailto:moztabarafid@gmail.com">moztabarafid@gmail.com</a>
-      <a href="https://www.linkedin.com/in/moztabarafid" target="_blank" rel="noopener">LinkedIn ↗</a>
-    </div>
-  </div>
+    <div class="layout">
 
-  <main id="main">
+      <!-- Left margin -->
+      <aside class="rail rail--left" aria-hidden="true">
+        <span class="rail__mark">01</span>
+        <span class="rail__text">MD MOZTABA RAFID · EEE / UAP · DHAKA, BD</span>
+        <span class="rail__sheet">SHEET 01 / 01</span>
+      </aside>
 
-    <!-- ===== HERO ===== -->
-    <section class="hero" id="top">
-      <div class="wrap hero__grid">
+      <main id="main">
 
-        <div class="hero__copy">
-          <h1 class="hero__title reveal">
-            <span class="hero__hello">Hi, I'm</span>
-            <span class="hero__name">Moztaba Rafid</span>
-          </h1>
-
-          <p class="hero__role reveal">Embedded systems · Robotics · EEE @ UAP</p>
-
-          <p class="hero__lead reveal">
-            Electrical and Electronic Engineering student at the
-            <strong>University of Asia Pacific</strong>, Dhaka. I build embedded
-            systems and small robots with Arduino, ESP32 and C/C++.
-          </p>
-
-          <div class="hero__cta reveal">
-            <a href="#projects" class="btn btn--primary">
-              View projects
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
-            </a>
-            <a href="#contact" class="btn btn--ghost">Contact me</a>
+        <!-- ===== HERO ===== -->
+        <section class="hero" id="top">
+          <div class="docstrip" aria-hidden="true">
+            <span>MR–2026–01</span>
+            <span>OPERATOR · MD MOZTABA RAFID</span>
+            <span>EEE / UAP · DHAKA</span>
+            <span>SHEET 01 / 01</span>
           </div>
 
-          <div class="hero__social reveal">
-            <a class="social" href="https://github.com/moztabasun" target="_blank" rel="noopener" aria-label="GitHub">
-              <svg class="icon-fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-2c-3.2.7-3.87-1.54-3.87-1.54-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.28-5.23-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.8 0c2.21-1.49 3.18-1.18 3.18-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.69 5.39-5.25 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.68.8.56A11.99 11.99 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5Z"/></svg>
-            </a>
-            <a class="social" href="https://www.linkedin.com/in/moztabarafid" target="_blank" rel="noopener" aria-label="LinkedIn">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 9v11M4.5 5.2v.1M10 20V9m0 4.3c0-2.6 1.7-4.5 4.2-4.5 2.4 0 4.3 1.6 4.3 4.6V20"/></svg>
-            </a>
-            <a class="social" href="mailto:moztabarafid@gmail.com" aria-label="Email">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m3.6 7 8.4 6 8.4-6"/></svg>
-            </a>
-            <span class="hero__location">Dhaka, Bangladesh</span>
-          </div>
+          <div class="hero__grid">
+            <div class="hero__copy">
+              <h1 class="hero__title reveal">
+                <span class="hero__name">Moztaba<br />Rafid</span>
+              </h1>
 
-          <p class="hero__now reveal">
-            <span class="dot-live" aria-hidden="true"></span>
-            Currently <b>Logistics Associate</b> at the UAP EEE Project Club
-          </p>
-        </div>
-
-        <div class="hero__visual reveal">
-          <div class="orb" aria-hidden="true"></div>
-          <div class="avatar">
-            <div class="avatar__ring" aria-hidden="true"></div>
-            <img src="images/sun.jpeg" alt="Portrait of Md Moztaba Rafid" width="340" height="340" fetchpriority="high" decoding="async" />
-            <div class="avatar__chip avatar__chip--1">C/C++</div>
-            <div class="avatar__chip avatar__chip--2">ESP32</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== ABOUT ===== -->
-    <section class="section" id="about">
-      <div class="wrap">
-        <div class="section__head reveal">
-          <h2>About</h2>
-        </div>
-
-        <div class="about">
-          <div class="about__text reveal">
-            <p>
-              I'm a second-year <strong>Electrical and Electronic Engineering (EEE)</strong>
-              student at the <strong>University of Asia Pacific (UAP)</strong> in Dhaka.
-              I work on embedded systems and robotics — writing code, wiring sensors
-              and testing prototypes until they behave.
-            </p>
-            <p>
-              My main tools are <strong>Arduino, ESP32, Raspberry Pi, C/C++</strong> and
-              <strong>MATLAB</strong>, with PSpice for circuit simulation. I'm currently
-              <strong>Logistics Associate</strong> at the UAP EEE Project Club.
-            </p>
-            <p>
-              I also hold a <strong>National Skills Certificate in Mobile Phone Servicing
-              (Level 1)</strong> from NSDA, covering soldering, component testing and
-              phone repair.
-            </p>
-
-            <div class="chips">
-              <span class="chip">Robotics</span>
-              <span class="chip">Embedded systems</span>
-              <span class="chip">C / C++</span>
-              <span class="chip">Soldering</span>
-              <span class="chip">Teamwork</span>
-            </div>
-          </div>
-
-          <aside class="card about__card reveal">
-            <h3 class="card__title">Details</h3>
-            <ul class="facts">
-              <li><span>Location</span><b>Dhaka, Bangladesh</b></li>
-              <li><span>Degree</span><b>BSc in EEE, UAP</b></li>
-              <li><span>Focus</span><b>Embedded &amp; robotics</b></li>
-              <li><span>Email</span><b><a href="mailto:moztabarafid@gmail.com">moztabarafid@gmail.com</a></b></li>
-            </ul>
-            <a class="btn btn--ghost btn--full" href="https://www.linkedin.com/in/moztabarafid" target="_blank" rel="noopener">
-              LinkedIn profile
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
-            </a>
-          </aside>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== EXPERIENCE ===== -->
-    <section class="section" id="experience">
-      <div class="wrap">
-        <div class="section__head reveal">
-          <h2>Experience</h2>
-        </div>
-
-        <ol class="timeline">
-          <li class="timeline__item reveal">
-            <div class="timeline__dot" aria-hidden="true"></div>
-            <div class="timeline__body">
-              <div class="timeline__top">
-                <h3>Logistics Associate</h3>
-                <span class="tag tag--live">Current</span>
+              <div class="dim" aria-hidden="true">
+                <span class="dim__tick"></span>
+                <span class="dim__line"></span>
+                <span class="dim__label">NTS</span>
+                <span class="dim__tick"></span>
               </div>
-              <p class="timeline__meta">UAP EEE Project Club · Dhaka</p>
-              <p class="timeline__date">Aug 2026 — Present · 4 mos</p>
-              <p class="timeline__text">
-                Support logistics for club events and technical activities, and keep
-                teams coordinated through the semester.
+
+              <p class="hero__role reveal">Embedded systems · Robotics · EEE @ UAP</p>
+
+              <p class="hero__lead reveal">
+                Electrical and Electronic Engineering student at the
+                <strong>University of Asia Pacific</strong>, Dhaka. I build embedded
+                systems and small robots with Arduino, ESP32 and C/C++.
+              </p>
+
+              <div class="hero__cta reveal">
+                <a href="#projects" class="btn btn--primary">
+                  View projects
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
+                </a>
+                <a href="#contact" class="btn btn--ghost">Contact me</a>
+              </div>
+
+              <p class="pencil reveal">
+                <svg viewBox="0 0 44 18" aria-hidden="true"><path d="M2 13c8-8 18-9 32-4M30 3l5 6-8 3"/></svg>
+                prototype → test → tune
+              </p>
+
+              <div class="hero__social reveal">
+                <a class="social" href="https://github.com/moztabasun" target="_blank" rel="noopener" aria-label="GitHub">
+                  <svg class="icon-fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-2c-3.2.7-3.87-1.54-3.87-1.54-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.28-5.23-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.8 0c2.21-1.49 3.18-1.18 3.18-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.69 5.39-5.25 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.68.8.56A11.99 11.99 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5Z"/></svg>
+                </a>
+                <a class="social" href="https://www.linkedin.com/in/moztabarafid" target="_blank" rel="noopener" aria-label="LinkedIn">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 9v11M4.5 5.2v.1M10 20V9m0 4.3c0-2.6 1.7-4.5 4.2-4.5 2.4 0 4.3 1.6 4.3 4.6V20"/></svg>
+                </a>
+                <a class="social" href="mailto:moztabarafid@gmail.com" aria-label="Email">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m3.6 7 8.4 6 8.4-6"/></svg>
+                </a>
+                <span class="hero__location">Dhaka, Bangladesh</span>
+              </div>
+
+              <p class="hero__now reveal">
+                <span class="dot-live" aria-hidden="true"></span>
+                <span>Currently <b>Logistics Associate</b> at the UAP EEE Project Club</span>
               </p>
             </div>
-          </li>
 
-          <li class="timeline__item reveal">
-            <div class="timeline__dot" aria-hidden="true"></div>
-            <div class="timeline__body">
-              <div class="timeline__top">
-                <h3>Technical Member</h3>
-                <span class="tag">4 mos</span>
-              </div>
-              <p class="timeline__meta">UAP EEE Project Club · Dhaka</p>
-              <p class="timeline__date">Apr 2026 — Jul 2026</p>
-              <p class="timeline__text">
-                Worked on club engineering projects and build sessions, mainly in
-                embedded hardware and prototyping.
-              </p>
-            </div>
-          </li>
+            <div class="hero__visual">
+              <figure class="plate plate--hero reveal">
+                <figcaption class="plate__head">
+                  <span>FIG. 01</span>
+                  <span class="plate__title">Line Following Robot</span>
+                  <span>PLAN · NTS</span>
+                </figcaption>
 
-          <li class="timeline__item reveal">
-            <div class="timeline__dot" aria-hidden="true"></div>
-            <div class="timeline__body">
-              <div class="timeline__top">
-                <h3>Sub Member</h3>
-                <span class="tag">5 mos</span>
-              </div>
-              <p class="timeline__meta">UAP EEE Sports Club · Dhaka</p>
-              <p class="timeline__date">Nov 2025 — Mar 2026</p>
-              <p class="timeline__text">
-                Took part in university football activities and team events.
-              </p>
-            </div>
-          </li>
-        </ol>
-      </div>
-    </section>
+                <div class="plate__canvas">
+                  <svg class="lfr" viewBox="0 0 560 640" role="img" aria-labelledby="lfrTitle lfrDesc">
+                    <title id="lfrTitle">Plan view of the line-following robot</title>
+                    <desc id="lfrDesc">Technical plan view showing five IR sensors over a track line, an Arduino, a motor driver, two gear motors, a castor and a battery pack, with control callouts and a sensor detail.</desc>
 
-    <!-- ===== PROJECTS ===== -->
-    <section class="section" id="projects">
-      <div class="wrap">
-        <div class="section__head reveal">
-          <h2>Projects</h2>
-        </div>
+                    <defs>
+                      <pattern id="lfrGrid" width="20" height="20" patternUnits="userSpaceOnUse">
+                        <path d="M20 0H0V20" fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.11"/>
+                      </pattern>
+                      <marker id="ahInk" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto-start-reverse" class="ah ah--ink">
+                        <path d="M0 0 8 4 0 8"/>
+                      </marker>
+                      <marker id="ahRed" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto-start-reverse" class="ah ah--red">
+                        <path d="M0 0 8 4 0 8"/>
+                      </marker>
+                    </defs>
 
-        <div class="projects">
+                    <rect width="560" height="640" fill="url(#lfrGrid)"/>
 
-          <article class="card project reveal tilt">
-            <div class="project__glow" aria-hidden="true"></div>
-            <div class="project__head">
-              <span class="project__index">01</span>
-              <span class="tag tag--accent">Robotics</span>
-            </div>
-            <h3>Line Following Robot (LFR)</h3>
-            <p>
-              A line-following robot built with an IR sensor array, an Arduino and
-              PID motor control. It was entered in a robotics competition.
-            </p>
-            <ul class="project__list">
-              <li>IR sensor array and motor driver integration</li>
-              <li>PID tuning for stable tracking</li>
-              <li>Lightweight chassis</li>
-            </ul>
-            <div class="tags">
-              <span>Embedded C++</span><span>Arduino</span><span>PID</span><span>Hardware</span>
-            </div>
-          </article>
+                    <!-- track -->
+                    <path class="plot" d="M58 150H502" pathLength="1" stroke-width="4"/>
+                    <path d="M58 150H502" class="track-dash" stroke-width="1.2"/>
 
-          <article class="card project reveal tilt">
-            <div class="project__glow" aria-hidden="true"></div>
-            <div class="project__head">
-              <span class="project__index">02</span>
-              <span class="tag tag--accent">Software</span>
-            </div>
-            <h3>Bank Account Management System</h3>
-            <p>
-              A console application in C++ for creating accounts, checking balances
-              and recording transactions. Records are stored in files so data
-              persists between runs.
-            </p>
-            <ul class="project__list">
-              <li>Object-oriented structure</li>
-              <li>Login validation</li>
-              <li>File handling for persistent records</li>
-            </ul>
-            <div class="tags">
-              <span>C++</span><span>OOP</span><span>Data Structures</span><span>File I/O</span>
-            </div>
-          </article>
+                    <!-- sensor beams -->
+                    <g class="beams">
+                      <path d="M210 180V156" marker-end="url(#ahRed)"/>
+                      <path d="M280 180V156" marker-end="url(#ahRed)"/>
+                      <path d="M350 180V156" marker-end="url(#ahRed)"/>
+                    </g>
 
-          <article class="card project reveal tilt">
-            <div class="project__glow" aria-hidden="true"></div>
-            <div class="project__head">
-              <span class="project__index">03</span>
-              <span class="tag tag--accent">Web</span>
-            </div>
-            <h3>Portfolio Website</h3>
-            <p>
-              This site, written in plain HTML, CSS and JavaScript with no
-              frameworks. It is deployed on GitHub Pages.
-            </p>
-            <ul class="project__list">
-              <li>Responsive layout</li>
-              <li>Dark and light themes</li>
-              <li>Reduced-motion support</li>
-            </ul>
-            <div class="tags">
-              <span>HTML</span><span>CSS</span><span>JavaScript</span><span>GitHub Pages</span>
-            </div>
-          </article>
+                    <!-- chassis -->
+                    <rect class="plot" x="180" y="210" width="200" height="230" rx="4" pathLength="1"/>
+                    <rect x="188" y="218" width="184" height="214" rx="2" class="hidden"/>
 
-        </div>
-      </div>
-    </section>
+                    <!-- wheels -->
+                    <g class="wheels">
+                      <rect class="plot" x="148" y="246" width="26" height="88" rx="4" pathLength="1"/>
+                      <rect class="plot" x="386" y="246" width="26" height="88" rx="4" pathLength="1"/>
+                      <path d="M153 260h16M153 274h16M153 288h16M153 302h16M153 316h16"/>
+                      <path d="M391 260h16M391 274h16M391 288h16M391 302h16M391 316h16"/>
+                      <path d="M174 279h6M174 301h6M380 279h6M380 301h6" class="hidden"/>
+                      <circle cx="161" cy="290" r="2.4" class="dot dot--ink"/>
+                      <circle cx="399" cy="290" r="2.4" class="dot dot--ink"/>
+                    </g>
 
-    <!-- ===== SKILLS ===== -->
-    <section class="section" id="skills">
-      <div class="wrap">
-        <div class="section__head reveal">
-          <h2>Skills</h2>
-        </div>
+                    <!-- castor -->
+                    <circle cx="280" cy="420" r="10" class="plot" pathLength="1"/>
+                    <path d="M280 410v20M270 420h20" class="hidden"/>
 
-        <div class="skills">
-          <div class="skills__groups">
-            <div class="skill-group reveal">
-              <h3>Programming</h3>
-              <div class="tags">
-                <span>C</span><span>C++</span><span>Python</span><span>MATLAB</span><span>HTML/CSS/JS</span>
-              </div>
-            </div>
+                    <!-- sensor bar -->
+                    <rect class="plot" x="196" y="182" width="168" height="15" rx="2" pathLength="1"/>
+                    <g class="sensors">
+                      <circle cx="210" cy="189" r="4.6"/><circle cx="245" cy="189" r="4.6"/>
+                      <circle cx="280" cy="189" r="4.6"/><circle cx="315" cy="189" r="4.6"/>
+                      <circle cx="350" cy="189" r="4.6"/>
+                      <circle cx="210" cy="189" r="1.7" class="dot dot--red"/>
+                      <circle cx="245" cy="189" r="1.7" class="dot dot--red"/>
+                      <circle cx="280" cy="189" r="1.7" class="dot dot--red"/>
+                      <circle cx="315" cy="189" r="1.7" class="dot dot--red"/>
+                      <circle cx="350" cy="189" r="1.7" class="dot dot--red"/>
+                    </g>
 
-            <div class="skill-group reveal">
-              <h3>Hardware</h3>
-              <div class="tags">
-                <span>Arduino</span><span>ESP32</span><span>Raspberry Pi</span><span>IR sensors</span><span>Motor drivers</span><span>PID</span>
-              </div>
-            </div>
+                    <!-- boards -->
+                    <rect class="board" x="204" y="244" width="78" height="60" rx="2"/>
+                    <g class="pins">
+                      <path d="M210 250h8v4h-8zM220 250h8v4h-8zM230 250h8v4h-8zM240 250h8v4h-8zM250 250h8v4h-8zM260 250h8v4h-8zM270 250h8v4h-8z"/>
+                      <path d="M210 294h8v4h-8zM220 294h8v4h-8zM230 294h8v4h-8zM240 294h8v4h-8zM250 294h8v4h-8zM260 294h8v4h-8zM270 294h8v4h-8z"/>
+                    </g>
+                    <text x="243" y="276" class="part-label" text-anchor="middle">MCU</text>
 
-            <div class="skill-group reveal">
-              <h3>Tools</h3>
-              <div class="tags">
-                <span>PSpice</span><span>MATLAB</span><span>Git &amp; GitHub</span><span>Arduino IDE</span><span>VS Code</span>
-              </div>
-            </div>
+                    <rect class="board" x="294" y="260" width="58" height="42" rx="2"/>
+                    <path d="M300 266h46M300 271h46M300 276h46" class="hatch"/>
+                    <text x="323" y="292" class="part-label" text-anchor="middle">DRV</text>
 
-            <div class="skill-group reveal">
-              <h3>Other</h3>
-              <div class="tags">
-                <span>Problem solving</span><span>Teamwork</span><span>Communication</span><span>Logistics</span><span>OSH practices</span>
-              </div>
+                    <rect class="board" x="212" y="342" width="92" height="52" rx="2"/>
+                    <path d="M222 352v32M234 352v32M324 352v32" class="hidden"/>
+                    <rect x="220" y="352" width="28" height="32" rx="1.5" class="cell"/>
+                    <rect x="254" y="352" width="28" height="32" rx="1.5" class="cell"/>
+                    <text x="238" y="386" class="part-label" text-anchor="middle">PACK</text>
+
+                    <!-- wires -->
+                    <g class="wires">
+                      <path d="M280 197v16h-37v31" marker-end="url(#ahInk)"/>
+                      <path d="M282 274h12" marker-end="url(#ahInk)"/>
+                      <path d="M352 281h34" marker-end="url(#ahInk)"/>
+                      <path d="M240 342v-38" marker-end="url(#ahInk)"/>
+                      <path d="M323 302v40" marker-end="url(#ahInk)"/>
+                    </g>
+
+                    <!-- dimension -->
+                    <g class="dimline">
+                      <path d="M148 440v34M412 440v34" class="ext"/>
+                      <path d="M150 466h260" marker-start="url(#ahInk)" marker-end="url(#ahInk)"/>
+                      <text x="280" y="458" text-anchor="middle" class="dimtxt">TRACK WIDTH / NTS</text>
+                    </g>
+
+                    <!-- callouts -->
+                    <g class="callouts">
+                      <text x="32" y="108" class="lbl">01 · IR SENSOR ARRAY</text>
+                      <path d="M148 112h42l30 62" marker-end="url(#ahRed)"/>
+                      <circle cx="220" cy="174" r="2.6" class="dot dot--red"/>
+
+                      <text x="424" y="246" class="lbl">02 · MCU / ARDUINO</text>
+                      <path d="M424 250h-64v-18h-90v10" marker-end="url(#ahInk)"/>
+                      <circle cx="270" cy="242" r="2.6" class="dot dot--red"/>
+
+                      <text x="424" y="316" class="lbl">03 · MOTOR DRIVER</text>
+                      <path d="M424 320h-44v-30h-28" marker-end="url(#ahRed)"/>
+                      <circle cx="352" cy="290" r="2.6" class="dot dot--red"/>
+
+                      <text x="32" y="300" class="lbl">04 · DC MOTOR ×2</text>
+                      <path d="M112 304h34" marker-end="url(#ahInk)"/>
+                      <circle cx="146" cy="304" r="2.6" class="dot dot--red"/>
+
+                      <text x="424" y="420" class="lbl">05 · CASTOR</text>
+                      <path d="M424 424h-84v-4h-40" marker-end="url(#ahInk)"/>
+                      <circle cx="292" cy="420" r="2.6" class="dot dot--red"/>
+                    </g>
+
+                    <!-- tidy note -->
+                    <text x="32" y="466" class="micro">PROTOTYPE · TEST · TUNE</text>
+
+                    <!-- detail -->
+                    <g class="detail">
+                      <rect x="32" y="500" width="196" height="108" class="frame"/>
+                      <text x="40" y="516" class="micro">DETAIL A · IR ARRAY</text>
+                      <path d="M44 548h172" class="detail-track"/>
+                      <rect x="64" y="566" width="132" height="10" rx="1.5" class="plot"/>
+                      <g class="beams">
+                        <path d="M74 566v-14" marker-end="url(#ahRed)"/>
+                        <path d="M126 566v-14" marker-end="url(#ahRed)"/>
+                        <path d="M178 566v-14" marker-end="url(#ahRed)"/>
+                      </g>
+                      <g class="sensors">
+                        <circle cx="74" cy="571" r="3.2"/><circle cx="100" cy="571" r="3.2"/>
+                        <circle cx="126" cy="571" r="3.2"/><circle cx="152" cy="571" r="3.2"/>
+                        <circle cx="178" cy="571" r="3.2"/>
+                      </g>
+                      <text x="126" y="596" class="micro micro--mid" text-anchor="middle">5 × IR</text>
+                    </g>
+
+                    <!-- legend -->
+                    <g class="legend">
+                      <text x="252" y="514" class="micro">LEGEND</text>
+                      <path d="M252 531h26" class="key key--ink"/>
+                      <text x="288" y="534" class="lbl">STRUCTURE</text>
+                      <path d="M252 549h26" class="key key--dash"/>
+                      <text x="288" y="552" class="lbl">SIGNAL</text>
+                      <path d="M252 567h26" class="key key--red"/>
+                      <text x="288" y="570" class="lbl">CONTROL / PID</text>
+                      <text x="252" y="598" class="micro">SCALE NTS · NO DIMENSIONS</text>
+                    </g>
+                  </svg>
+                </div>
+
+                <div class="plate__foot">
+                  <span>IR ARRAY / PID / PWM</span>
+                  <span>REF. 01</span>
+                </div>
+              </figure>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- ===== CERTIFICATIONS ===== -->
-    <section class="section section--tight" id="certifications">
-      <div class="wrap">
-        <div class="section__head reveal">
-          <h2>Certifications</h2>
-        </div>
+          <!-- INDEX OF WORK -->
+          <div class="index reveal" aria-label="Selected work">
+            <div class="index__head" aria-hidden="true">
+              <span>#</span><span>Selected work</span><span>Type</span><span>Year</span><span>Status</span><span></span>
+            </div>
+            <a class="index__row" href="#project-01">
+              <span class="index__no">01</span>
+              <span class="index__name">Line Following Robot (LFR)</span>
+              <span class="index__type">Robotics / embedded</span>
+              <span class="index__year">2026</span>
+              <span class="index__status"><i aria-hidden="true"></i>Built</span>
+              <svg class="index__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
+            </a>
+            <a class="index__row" href="#project-02">
+              <span class="index__no">02</span>
+              <span class="index__name">Bank Account Management System</span>
+              <span class="index__type">C++ / OOP</span>
+              <span class="index__year">2026</span>
+              <span class="index__status"><i aria-hidden="true"></i>Built</span>
+              <svg class="index__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
+            </a>
+            <a class="index__row" href="#project-03">
+              <span class="index__no">03</span>
+              <span class="index__name">Portfolio Website</span>
+              <span class="index__type">HTML / CSS / JS</span>
+              <span class="index__year">2026</span>
+              <span class="index__status"><i aria-hidden="true"></i>Live</span>
+              <svg class="index__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
+        </section>
 
-        <ul class="cert-list">
-          <li class="cert reveal">
-            <div class="cert__top">
-              <h3>Mobile Phone Servicing — Level 1</h3>
-              <span class="tag">National</span>
-            </div>
-            <p>National Skills Certificate · NSDA / BNQF</p>
-          </li>
-          <li class="cert reveal">
-            <div class="cert__top">
-              <h3>RoboStar: From Arduino to Autonomous Robots</h3>
-              <span class="tag">Workshop</span>
-            </div>
-            <p>Workshop on Arduino and autonomous robots</p>
-          </li>
-          <li class="cert reveal">
-            <div class="cert__top">
-              <h3>Computer Office Application</h3>
-              <span class="tag">IT skills</span>
-            </div>
-            <p>Office software certificate</p>
-          </li>
-          <li class="cert reveal">
-            <div class="cert__top">
-              <h3>Sports Training</h3>
-              <span class="tag">Sports</span>
-            </div>
-            <p>Sports training certificate</p>
-          </li>
-        </ul>
-      </div>
-    </section>
+        <!-- ===== ABOUT ===== -->
+        <section class="section" id="about">
+          <header class="section__head reveal">
+            <span class="section__no">01</span>
+            <h2>About</h2>
+            <span class="section__field">GENERAL NOTES / 03</span>
+          </header>
 
-    <!-- ===== EDUCATION ===== -->
-    <section class="section" id="education">
-      <div class="wrap">
-        <div class="section__head reveal">
-          <h2>Education</h2>
-        </div>
+          <div class="about">
+            <div class="about__notes reveal">
+              <p class="note note--first">
+                <span class="note__no">1.1</span>
+                I'm a second-year <strong>Electrical and Electronic Engineering (EEE)</strong>
+                student at the <strong>University of Asia Pacific (UAP)</strong> in Dhaka.
+                I work on embedded systems and robotics — writing code, wiring sensors
+                and testing prototypes until they behave.
+              </p>
+              <p class="note">
+                <span class="note__no">1.2</span>
+                My main tools are <strong>Arduino, ESP32, Raspberry Pi, C/C++</strong> and
+                <strong>MATLAB</strong>, with PSpice for circuit simulation. I'm currently
+                <strong>Logistics Associate</strong> at the UAP EEE Project Club.
+              </p>
+              <p class="note">
+                <span class="note__no">1.3</span>
+                I also hold a <strong>National Skills Certificate in Mobile Phone Servicing
+                (Level 1)</strong> from NSDA, covering soldering, component testing and
+                phone repair.
+              </p>
 
-        <ol class="edu-list">
-          <li class="edu reveal">
-            <span class="edu__year">2025 — Present</span>
-            <div class="edu__body">
-              <h3>BSc in Electrical &amp; Electronic Engineering</h3>
-              <p class="edu__place">University of Asia Pacific (UAP) · Dhaka</p>
-              <p>Coursework in circuits, electronics, control systems and programming.</p>
+              <p class="keywords">
+                <span>KEYWORDS</span>
+                <span>Robotics</span><span>Embedded systems</span><span>C / C++</span><span>Soldering</span><span>Teamwork</span>
+              </p>
             </div>
-          </li>
 
-          <li class="edu reveal">
-            <span class="edu__year">2022 — 2023</span>
-            <div class="edu__body">
-              <h3>Higher Secondary Certificate — Science</h3>
-              <p class="edu__place">Government Shah Sultan College · Bogura</p>
-            </div>
-          </li>
+            <aside class="about__card reveal">
+              <figure class="photo">
+                <div class="photo__frame">
+                  <img src="images/portrait.jpg" alt="Portrait of Md Moztaba Rafid" width="1200" height="1600" loading="lazy" decoding="async" />
+                </div>
+                <figcaption>
+                  <span>REFERENCE PHOTO — OPERATOR</span>
+                  <span lang="bn">ঢাকা, বাংলাদেশ</span>
+                </figcaption>
+              </figure>
 
-          <li class="edu reveal">
-            <span class="edu__year">2013 — 2021</span>
-            <div class="edu__body">
-              <h3>Secondary School Certificate — Science</h3>
-              <p class="edu__place">Police Lines School and College · Bogura</p>
-            </div>
-          </li>
-        </ol>
-      </div>
-    </section>
+              <span class="stamp" aria-hidden="true">DHAKA · BD<br />23.81°N 90.41°E</span>
 
-    <!-- ===== HOBBIES ===== -->
-    <section class="section section--tight" id="hobbies">
-      <div class="wrap">
-        <div class="section__head reveal">
-          <h2>Hobbies</h2>
-        </div>
+              <a class="link-arrow" href="https://www.linkedin.com/in/moztabarafid" target="_blank" rel="noopener">
+                LinkedIn profile
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+              </a>
+            </aside>
+          </div>
 
-        <ul class="hobby-list">
-          <li class="hobby reveal">
-            <span class="hobby__icon">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m12 7.4 3.2 2.3-1.2 3.8h-4l-1.2-3.8L12 7.4Z"/><path d="M12 3v4.4M4.2 9.6l3.8 2.4M19.8 9.6l-3.8 2.4M7.6 19.8 10 13.5M16.4 19.8 14 13.5"/></svg>
-            </span>
-            <div>
-              <h3>Football</h3>
-              <p>University sports club</p>
-            </div>
-          </li>
-          <li class="hobby reveal">
-            <span class="hobby__icon">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9.5" cy="9.5" r="5.5"/><path d="m13.6 13.6 4.6 4.6M6.7 6.7l5.6 5.6M6.7 12.3l5.6-5.6M20 4l-1.6 4.2L14.2 10l1.6-4.2L20 4Z"/></svg>
-            </span>
-            <div>
-              <h3>Badminton</h3>
-              <p>Social games</p>
-            </div>
-          </li>
-          <li class="hobby reveal">
-            <span class="hobby__icon">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 3.5 8 15.5l-2.5 4.9 4.9-2.5L22 11.5l-7.5-8Z"/><path d="m8 15.5 5 4M4 20l3-3"/><circle cx="18.5" cy="18.5" r="2.2"/></svg>
-            </span>
-            <div>
-              <h3>Cricket</h3>
-              <p>Weekend games</p>
-            </div>
-          </li>
-          <li class="hobby reveal">
-            <span class="hobby__icon">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 3 3 10.5l6.2 2.4L21 3ZM21 3l-4.8 16.8-4.8-5.9M9.2 12.9l-1.6 5.4 4-2.6"/></svg>
-            </span>
-            <div>
-              <h3>Traveling</h3>
-              <p>Trips around Bangladesh</p>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </section>
+          <dl class="facts reveal">
+            <div><dt>Location</dt><dd>Dhaka, Bangladesh</dd></div>
+            <div><dt>Degree</dt><dd>BSc in EEE, UAP</dd></div>
+            <div><dt>Focus</dt><dd>Embedded &amp; robotics</dd></div>
+            <div><dt>Email</dt><dd><a href="mailto:moztabarafid@gmail.com">moztabarafid@gmail.com</a></dd></div>
+          </dl>
+        </section>
 
-    <!-- ===== CONTACT ===== -->
-    <section class="section" id="contact">
-      <div class="wrap">
-        <div class="card contact reveal">
-          <h2>Contact</h2>
-          <p class="contact__lead">
-            For internships, collaborations or questions about a project,
-            email is the best way to reach me.
-          </p>
+        <!-- ===== EXPERIENCE ===== -->
+        <section class="section" id="experience">
+          <header class="section__head reveal">
+            <span class="section__no">02</span>
+            <h2>Experience</h2>
+            <span class="section__field">REVISION HISTORY</span>
+          </header>
+
+          <div class="table-wrap reveal">
+            <table class="rev">
+              <caption class="sr-only">Experience</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Rev</th>
+                  <th scope="col">Period</th>
+                  <th scope="col">Role / organisation</th>
+                  <th scope="col">Notes</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td data-label="Rev"><span class="rev__no">R3</span><span class="tag tag--live">Current</span></td>
+                  <td data-label="Period"><span class="rev__period">Aug 2026 — Present<br /><span class="rev__dur">4 mos</span></span></td>
+                  <td data-label="Role"><h3>Logistics Associate</h3><p class="rev__org">UAP EEE Project Club · Dhaka</p></td>
+                  <td data-label="Notes"><p class="rev__notes">Support logistics for club events and technical activities, and keep teams coordinated through the semester.</p></td>
+                </tr>
+                <tr>
+                  <td data-label="Rev"><span class="rev__no">R2</span><span class="tag">4 mos</span></td>
+                  <td data-label="Period"><span class="rev__period">Apr 2026 — Jul 2026</span></td>
+                  <td data-label="Role"><h3>Technical Member</h3><p class="rev__org">UAP EEE Project Club · Dhaka</p></td>
+                  <td data-label="Notes"><p class="rev__notes">Worked on club engineering projects and build sessions, mainly in embedded hardware and prototyping.</p></td>
+                </tr>
+                <tr>
+                  <td data-label="Rev"><span class="rev__no">R1</span><span class="tag">5 mos</span></td>
+                  <td data-label="Period"><span class="rev__period">Nov 2025 — Mar 2026</span></td>
+                  <td data-label="Role"><h3>Sub Member</h3><p class="rev__org">UAP EEE Sports Club · Dhaka</p></td>
+                  <td data-label="Notes"><p class="rev__notes">Took part in university football activities and team events.</p></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- ===== PROJECTS ===== -->
+        <section class="section" id="projects">
+          <header class="section__head reveal">
+            <span class="section__no">03</span>
+            <h2>Projects</h2>
+            <span class="section__field">DETAIL SHEETS / 03</span>
+          </header>
+
+          <div class="details">
+
+            <article class="detail reveal" id="project-01">
+              <div class="detail__copy">
+                <div class="detail__meta">
+                  <span class="detail__no">DETAIL 01</span>
+                  <span class="tag tag--accent">Robotics</span>
+                </div>
+                <h3>Line Following Robot (LFR)</h3>
+                <p>
+                  A line-following robot built with an IR sensor array, an Arduino and
+                  PID motor control. It was entered in a robotics competition.
+                </p>
+                <ol class="detail__list">
+                  <li>IR sensor array and motor driver integration</li>
+                  <li>PID tuning for stable tracking</li>
+                  <li>Lightweight chassis</li>
+                </ol>
+                <p class="detail__parts"><span>PARTS</span> Embedded C++ / Arduino / PID / Hardware</p>
+              </div>
+
+              <div class="detail__figure">
+                <figure class="plate plate--detail">
+                  <figcaption class="plate__head">
+                    <span>FIG. 02</span>
+                    <span class="plate__title">Control loop</span>
+                    <span>NTS</span>
+                  </figcaption>
+                  <div class="plate__canvas">
+                    <svg class="diagram" viewBox="0 0 560 320" role="img" aria-labelledby="fig02Title fig02Desc">
+                      <title id="fig02Title">Line-following robot control loop</title>
+                      <desc id="fig02Desc">Block diagram: setpoint, sum, PID controller, motor driver, motors, track position and IR sensor feeding back to the sum.</desc>
+                      <defs>
+                        <pattern id="grid02" width="20" height="20" patternUnits="userSpaceOnUse">
+                          <path d="M20 0H0V20" fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.1"/>
+                        </pattern>
+                        <marker id="ah02" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto-start-reverse" class="ah ah--ink"><path d="M0 0 8 4 0 8"/></marker>
+                        <marker id="ah02r" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto-start-reverse" class="ah ah--red"><path d="M0 0 8 4 0 8"/></marker>
+                      </defs>
+                      <rect width="560" height="320" fill="url(#grid02)"/>
+
+                      <g class="blocks">
+                        <rect x="24" y="54" width="96" height="54"/>
+                        <text x="72" y="78" text-anchor="middle">SETPOINT</text>
+                        <text x="72" y="92" text-anchor="middle" class="sub">LINE CENTER</text>
+
+                        <circle cx="162" cy="81" r="20"/>
+                        <text x="162" y="87" text-anchor="middle" class="sum">Σ</text>
+                        <text x="162" y="118" text-anchor="middle" class="sub">−</text>
+
+                        <rect x="198" y="54" width="90" height="54"/>
+                        <text x="243" y="78" text-anchor="middle">PID</text>
+                        <text x="243" y="92" text-anchor="middle" class="sub">CONTROL</text>
+
+                        <rect x="312" y="54" width="92" height="54"/>
+                        <text x="358" y="78" text-anchor="middle">DRIVER</text>
+                        <text x="358" y="92" text-anchor="middle" class="sub">PWM</text>
+
+                        <rect x="428" y="54" width="108" height="54"/>
+                        <text x="482" y="78" text-anchor="middle">MOTORS</text>
+                        <text x="482" y="92" text-anchor="middle" class="sub">2 × DC</text>
+
+                        <rect x="428" y="180" width="108" height="54"/>
+                        <text x="482" y="204" text-anchor="middle">TRACK</text>
+                        <text x="482" y="218" text-anchor="middle" class="sub">POSITION</text>
+
+                        <rect x="250" y="180" width="110" height="54"/>
+                        <text x="305" y="204" text-anchor="middle">SENSOR</text>
+                        <text x="305" y="218" text-anchor="middle" class="sub">IR ARRAY</text>
+                      </g>
+
+                      <g class="flow">
+                        <path d="M120 81h20" marker-end="url(#ah02)"/>
+                        <path d="M182 81h14" marker-end="url(#ah02)"/>
+                        <path d="M288 81h22" marker-end="url(#ah02)"/>
+                        <path d="M404 81h22" marker-end="url(#ah02)"/>
+                        <path d="M482 108v70" marker-end="url(#ah02)"/>
+                        <path d="M428 207h-66" marker-end="url(#ah02)"/>
+                        <path d="M250 207H162v-86" marker-end="url(#ah02r)" class="feedback"/>
+                      </g>
+
+                      <text x="492" y="146" class="micro">MOTION</text>
+                      <text x="360" y="238" class="micro">POSITION</text>
+                      <text x="178" y="140" class="micro">FEEDBACK</text>
+                      <text x="104" y="44" class="micro">SETPOINT</text>
+                      <text x="206" y="44" class="micro">ERROR</text>
+                      <text x="318" y="44" class="micro">CORRECTION</text>
+
+                      <g class="notes">
+                        <text x="24" y="286" class="micro">SETPOINT = LINE CENTER</text>
+                        <text x="24" y="300" class="micro">ERROR = DEVIATION FROM CENTER</text>
+                        <text x="360" y="286" class="micro">FEEDBACK = IR ARRAY</text>
+                      </g>
+                    </svg>
+                  </div>
+                  <div class="plate__foot">
+                    <span>SETPOINT / ERROR / PWM</span>
+                    <span>REF. 01</span>
+                  </div>
+                </figure>
+              </div>
+            </article>
+
+            <article class="detail reveal" id="project-02">
+              <div class="detail__copy">
+                <div class="detail__meta">
+                  <span class="detail__no">DETAIL 02</span>
+                  <span class="tag tag--accent">Software</span>
+                </div>
+                <h3>Bank Account Management System</h3>
+                <p>
+                  A console application in C++ for creating accounts, checking balances
+                  and recording transactions. Records are stored in files so data
+                  persists between runs.
+                </p>
+                <ol class="detail__list">
+                  <li>Object-oriented structure</li>
+                  <li>Login validation</li>
+                  <li>File handling for persistent records</li>
+                </ol>
+                <p class="detail__parts"><span>PARTS</span> C++ / OOP / Data Structures / File I/O</p>
+              </div>
+
+              <div class="detail__figure">
+                <figure class="plate plate--detail">
+                  <figcaption class="plate__head">
+                    <span>FIG. 03</span>
+                    <span class="plate__title">Account flow</span>
+                    <span>NTS</span>
+                  </figcaption>
+                  <div class="plate__canvas">
+                    <svg class="diagram" viewBox="0 0 560 320" role="img" aria-labelledby="fig03Title fig03Desc">
+                      <title id="fig03Title">Bank account management flow</title>
+                      <desc id="fig03Desc">Flow diagram: login, validation, menu, create account, check balance and transact, writing to a persistent accounts file.</desc>
+                      <defs>
+                        <pattern id="grid03" width="20" height="20" patternUnits="userSpaceOnUse">
+                          <path d="M20 0H0V20" fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.1"/>
+                        </pattern>
+                        <marker id="ah03" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto-start-reverse" class="ah ah--ink"><path d="M0 0 8 4 0 8"/></marker>
+                        <marker id="ah03r" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto-start-reverse" class="ah ah--red"><path d="M0 0 8 4 0 8"/></marker>
+                      </defs>
+                      <rect width="560" height="320" fill="url(#grid03)"/>
+
+                      <g class="blocks">
+                        <rect x="24" y="54" width="96" height="52"/>
+                        <text x="72" y="77" text-anchor="middle">LOGIN</text>
+                        <text x="72" y="91" text-anchor="middle" class="sub">CREDENTIALS</text>
+
+                        <rect x="142" y="54" width="106" height="52"/>
+                        <text x="195" y="77" text-anchor="middle">VALIDATE</text>
+                        <text x="195" y="91" text-anchor="middle" class="sub">CHECK</text>
+
+                        <rect x="270" y="54" width="92" height="52"/>
+                        <text x="316" y="77" text-anchor="middle">MENU</text>
+                        <text x="316" y="91" text-anchor="middle" class="sub">ACCOUNTS</text>
+
+                        <rect x="396" y="24" width="140" height="44"/>
+                        <text x="466" y="50" text-anchor="middle" class="sub">CREATE ACCOUNT</text>
+
+                        <rect x="396" y="88" width="140" height="44"/>
+                        <text x="466" y="114" text-anchor="middle" class="sub">CHECK BALANCE</text>
+
+                        <rect x="396" y="152" width="140" height="44"/>
+                        <text x="466" y="178" text-anchor="middle" class="sub">TRANSACT</text>
+
+                        <rect x="70" y="150" width="100" height="40" class="dashed"/>
+                        <text x="120" y="175" text-anchor="middle" class="sub">RETRY</text>
+                      </g>
+
+                      <g class="flow">
+                        <path d="M120 80h16" marker-end="url(#ah03)"/>
+                        <path d="M248 80h16" marker-end="url(#ah03)"/>
+                        <path d="M362 80h14"/>
+                        <path d="M380 42v132"/>
+                        <path d="M380 42h10" marker-end="url(#ah03)"/>
+                        <path d="M380 110h10" marker-end="url(#ah03)"/>
+                        <path d="M380 174h10" marker-end="url(#ah03)"/>
+                        <path d="M195 106v14h-75v26" marker-end="url(#ah03)" class="dashed"/>
+                        <path d="M70 170H40V80h-8" marker-end="url(#ah03)" class="dashed"/>
+                        <path d="M420 196v96M466 196v96M512 196v96" class="file"/>
+                        <path d="M512 292H250v-18" marker-end="url(#ah03r)" class="file"/>
+                      </g>
+
+                      <g class="notes">
+                        <text x="140" y="136" class="micro">INVALID</text>
+                        <text x="46" y="222" class="micro">RETRY</text>
+                        <text x="330" y="286" class="micro red">FILE I/O</text>
+                        <text x="24" y="308" class="micro">RECORDS PERSIST BETWEEN RUNS</text>
+                      </g>
+
+                      <g class="blocks">
+                        <ellipse cx="250" cy="196" rx="60" ry="12"/>
+                        <path d="M190 196v70a60 12 0 0 0 120 0v-70"/>
+                        <path d="M190 216a60 12 0 0 0 120 0" class="hidden"/>
+                        <text x="250" y="246" text-anchor="middle" class="part-label">accounts.dat</text>
+                      </g>
+                    </svg>
+                  </div>
+                  <div class="plate__foot">
+                    <span>LOGIN / MENU / FILE I/O</span>
+                    <span>REF. 02</span>
+                  </div>
+                </figure>
+              </div>
+            </article>
+
+            <article class="detail reveal" id="project-03">
+              <div class="detail__copy">
+                <div class="detail__meta">
+                  <span class="detail__no">DETAIL 03</span>
+                  <span class="tag tag--accent">Web</span>
+                </div>
+                <h3>Portfolio Website</h3>
+                <p>
+                  This site, written in plain HTML, CSS and JavaScript with no
+                  frameworks. It is deployed on GitHub Pages.
+                </p>
+                <ol class="detail__list">
+                  <li>Responsive layout</li>
+                  <li>Dark and light themes</li>
+                  <li>Reduced-motion support</li>
+                </ol>
+                <p class="detail__parts"><span>PARTS</span> HTML / CSS / JavaScript / GitHub Pages</p>
+              </div>
+
+              <div class="detail__figure">
+                <figure class="plate plate--detail">
+                  <figcaption class="plate__head">
+                    <span>FIG. 04</span>
+                    <span class="plate__title">Site structure</span>
+                    <span>NTS</span>
+                  </figcaption>
+                  <div class="plate__canvas">
+                    <svg class="diagram" viewBox="0 0 560 320" role="img" aria-labelledby="fig04Title fig04Desc">
+                      <title id="fig04Title">Portfolio website structure</title>
+                      <desc id="fig04Desc">Browser frame with the portfolio layout, annotated with HTML structure, CSS presentation and JavaScript behaviour, deployed as a static site.</desc>
+                      <defs>
+                        <pattern id="grid04" width="20" height="20" patternUnits="userSpaceOnUse">
+                          <path d="M20 0H0V20" fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.1"/>
+                        </pattern>
+                        <marker id="ah04" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto-start-reverse" class="ah ah--ink"><path d="M0 0 8 4 0 8"/></marker>
+                        <marker id="ah04r" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto-start-reverse" class="ah ah--red"><path d="M0 0 8 4 0 8"/></marker>
+                      </defs>
+                      <rect width="560" height="320" fill="url(#grid04)"/>
+
+                      <g class="browser">
+                        <rect x="32" y="36" width="304" height="228"/>
+                        <path d="M32 60h304"/>
+                        <circle cx="44" cy="48" r="2.6"/><circle cx="54" cy="48" r="2.6"/><circle cx="64" cy="48" r="2.6"/>
+                        <text x="78" y="51" class="micro">moztabasun.github.io</text>
+                        <text x="314" y="51" class="micro red" text-anchor="end">LIVE</text>
+
+                        <path d="M44 72h280" class="hidden"/>
+                        <rect x="44" y="72" width="40" height="4" class="fill"/>
+                        <path d="M242 74h28M280 74h24M314 74h10" class="micro-line"/>
+
+                        <rect x="48" y="86" width="112" height="6" class="fill"/>
+                        <rect x="48" y="97" width="86" height="6" class="fill"/>
+                        <path d="M48 112h104M48 118h92M48 124h62" class="micro-line"/>
+
+                        <rect x="210" y="82" width="118" height="58" class="panel"/>
+                        <path d="M220 128h98M220 118h60" class="micro-line"/>
+                        <circle cx="269" cy="100" r="6" class="hidden"/>
+                        <path d="M252 126v-8h34v8M269 118v-6" class="micro-line"/>
+                        <rect x="255" y="124" width="28" height="3" class="fill-red"/>
+
+                        <path d="M44 150h280"/>
+                        <g class="rows">
+                          <rect x="48" y="160" width="6" height="6" class="fill-red"/>
+                          <path d="M62 164h120M62 170h74" class="micro-line"/>
+                          <path d="M250 164h40" class="micro-line"/>
+                          <rect x="48" y="182" width="6" height="6" class="fill-red"/>
+                          <path d="M62 186h140M62 192h92" class="micro-line"/>
+                          <path d="M250 186h40" class="micro-line"/>
+                          <rect x="48" y="204" width="6" height="6" class="fill-red"/>
+                          <path d="M62 208h104M62 214h68" class="micro-line"/>
+                          <path d="M250 208h40" class="micro-line"/>
+                        </g>
+
+                        <g class="title-mini">
+                          <path d="M48 226h180v28H48zM48 244h180M108 226v28M228 226v28"/>
+                          <path d="M56 234h34M56 240h22M116 234h50M116 240h34M236 234h20" class="micro-line"/>
+                        </g>
+                      </g>
+
+                      <g class="callouts">
+                        <text x="372" y="84" class="lbl">HTML / STRUCTURE</text>
+                        <path d="M372 80h-48" marker-end="url(#ah04)"/>
+                        <circle cx="320" cy="80" r="2.6" class="dot dot--red"/>
+
+                        <text x="372" y="140" class="lbl">CSS / SKIN</text>
+                        <path d="M372 136h-40" marker-end="url(#ah04)"/>
+                        <circle cx="328" cy="136" r="2.6" class="dot dot--red"/>
+
+                        <text x="372" y="196" class="lbl">JS / BEHAVIOR</text>
+                        <path d="M372 192h-52" marker-end="url(#ah04)"/>
+                        <circle cx="316" cy="192" r="2.6" class="dot dot--red"/>
+                      </g>
+
+                      <g class="notes">
+                        <path d="M184 264v18h20" marker-end="url(#ah04r)" class="file"/>
+                        <text x="214" y="286" class="micro red">GITHUB PAGES · STATIC</text>
+                        <text x="32" y="296" class="micro">NO FRAMEWORKS · NO BUILD STEP</text>
+                        <text x="372" y="236" class="micro">RESPONSIVE</text>
+                        <text x="372" y="252" class="micro">DARK / LIGHT</text>
+                        <text x="372" y="268" class="micro">REDUCED MOTION</text>
+                      </g>
+                    </svg>
+                  </div>
+                  <div class="plate__foot">
+                    <span>HTML / CSS / JS · GITHUB PAGES</span>
+                    <span>REF. 03</span>
+                  </div>
+                </figure>
+              </div>
+            </article>
+
+          </div>
+        </section>
+
+        <!-- ===== SKILLS ===== -->
+        <section class="section" id="skills">
+          <header class="section__head reveal">
+            <span class="section__no">04</span>
+            <h2>Skills</h2>
+            <span class="section__field">BILL OF MATERIALS</span>
+          </header>
+
+          <div class="table-wrap reveal">
+            <table class="bom">
+              <caption class="sr-only">Skills</caption>
+              <thead>
+                <tr><th scope="col">Ref</th><th scope="col">Group</th><th scope="col">Items</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td data-label="Ref"><span class="bom__ref">A</span></td>
+                  <th scope="row" data-label="Group">Programming</th>
+                  <td data-label="Items">C <i>/</i> C++ <i>/</i> Python <i>/</i> MATLAB <i>/</i> HTML/CSS/JS</td>
+                </tr>
+                <tr>
+                  <td data-label="Ref"><span class="bom__ref">B</span></td>
+                  <th scope="row" data-label="Group">Hardware</th>
+                  <td data-label="Items">Arduino <i>/</i> ESP32 <i>/</i> Raspberry Pi <i>/</i> IR sensors <i>/</i> Motor drivers <i>/</i> PID</td>
+                </tr>
+                <tr>
+                  <td data-label="Ref"><span class="bom__ref">C</span></td>
+                  <th scope="row" data-label="Group">Tools</th>
+                  <td data-label="Items">PSpice <i>/</i> MATLAB <i>/</i> Git &amp; GitHub <i>/</i> Arduino IDE <i>/</i> VS Code</td>
+                </tr>
+                <tr>
+                  <td data-label="Ref"><span class="bom__ref">D</span></td>
+                  <th scope="row" data-label="Group">Other</th>
+                  <td data-label="Items">Problem solving <i>/</i> Teamwork <i>/</i> Communication <i>/</i> Logistics <i>/</i> OSH practices</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- ===== EDUCATION + CERTIFICATIONS ===== -->
+        <section class="section" id="education">
+          <header class="section__head reveal">
+            <span class="section__no">05</span>
+            <h2>Education</h2>
+            <span class="section__field">RECORD &amp; APPROVALS</span>
+          </header>
+
+          <div class="record">
+            <div class="record__col reveal">
+              <h3 class="subhead">Record of issue</h3>
+              <ol class="edu-list">
+                <li class="edu">
+                  <span class="edu__year">2025 — Present</span>
+                  <div class="edu__body">
+                    <h4>BSc in Electrical &amp; Electronic Engineering</h4>
+                    <p class="edu__place">University of Asia Pacific (UAP) · Dhaka</p>
+                    <p>Coursework in circuits, electronics, control systems and programming.</p>
+                  </div>
+                </li>
+                <li class="edu">
+                  <span class="edu__year">2022 — 2023</span>
+                  <div class="edu__body">
+                    <h4>Higher Secondary Certificate — Science</h4>
+                    <p class="edu__place">Government Shah Sultan College · Bogura</p>
+                  </div>
+                </li>
+                <li class="edu">
+                  <span class="edu__year">2013 — 2021</span>
+                  <div class="edu__body">
+                    <h4>Secondary School Certificate — Science</h4>
+                    <p class="edu__place">Police Lines School and College · Bogura</p>
+                  </div>
+                </li>
+              </ol>
+            </div>
+
+            <div class="record__col reveal">
+              <h3 class="subhead">Approvals</h3>
+              <ul class="cert-list">
+                <li class="cert">
+                  <div class="cert__top">
+                    <h4>Mobile Phone Servicing — Level 1</h4>
+                    <span class="tag">National</span>
+                  </div>
+                  <p>National Skills Certificate · NSDA / BNQF</p>
+                </li>
+                <li class="cert">
+                  <div class="cert__top">
+                    <h4>RoboStar: From Arduino to Autonomous Robots</h4>
+                    <span class="tag">Workshop</span>
+                  </div>
+                  <p>Workshop on Arduino and autonomous robots</p>
+                </li>
+                <li class="cert">
+                  <div class="cert__top">
+                    <h4>Computer Office Application</h4>
+                    <span class="tag">IT skills</span>
+                  </div>
+                  <p>Office software certificate</p>
+                </li>
+                <li class="cert">
+                  <div class="cert__top">
+                    <h4>Sports Training</h4>
+                    <span class="tag">Sports</span>
+                  </div>
+                  <p>Sports training certificate</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===== NOTES ===== -->
+        <section class="section section--notes" id="notes">
+          <header class="section__head reveal">
+            <span class="section__no">06</span>
+            <h2>Notes</h2>
+            <span class="section__field">FIELD NOTES / HOBBIES</span>
+          </header>
+
+          <ul class="hobby-list reveal">
+            <li class="hobby">
+              <span class="hobby__icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m12 7.4 3.2 2.3-1.2 3.8h-4l-1.2-3.8L12 7.4Z"/><path d="M12 3v4.4M4.2 9.6l3.8 2.4M19.8 9.6l-3.8 2.4M7.6 19.8 10 13.5M16.4 19.8 14 13.5"/></svg>
+              </span>
+              <div><h3>Football</h3><p>University sports club</p></div>
+            </li>
+            <li class="hobby">
+              <span class="hobby__icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9.5" cy="9.5" r="5.5"/><path d="m13.6 13.6 4.6 4.6M6.7 6.7l5.6 5.6M6.7 12.3l5.6-5.6M20 4l-1.6 4.2L14.2 10l1.6-4.2L20 4Z"/></svg>
+              </span>
+              <div><h3>Badminton</h3><p>Social games</p></div>
+            </li>
+            <li class="hobby">
+              <span class="hobby__icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 3.5 8 15.5l-2.5 4.9 4.9-2.5L22 11.5l-7.5-8Z"/><path d="m8 15.5 5 4M4 20l3-3"/><circle cx="18.5" cy="18.5" r="2.2"/></svg>
+              </span>
+              <div><h3>Cricket</h3><p>Weekend games</p></div>
+            </li>
+            <li class="hobby">
+              <span class="hobby__icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 3 3 10.5l6.2 2.4L21 3ZM21 3l-4.8 16.8-4.8-5.9M9.2 12.9l-1.6 5.4 4-2.6"/></svg>
+              </span>
+              <div><h3>Traveling</h3><p>Trips around Bangladesh</p></div>
+            </li>
+          </ul>
+        </section>
+
+        <!-- ===== CONTACT ===== -->
+        <section class="section section--contact" id="contact">
+          <div class="contact__head">
+            <span class="contact__no" aria-hidden="true">07</span>
+            <h2>Contact</h2>
+            <p class="contact__lead">
+              For internships, collaborations or questions about a project,
+              email is the best way to reach me.
+            </p>
+          </div>
 
           <div class="contact__actions">
-            <a class="btn btn--primary btn--lg" href="mailto:moztabarafid@gmail.com">
+            <a class="btn btn--invert btn--email" href="mailto:moztabarafid@gmail.com">
               <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m3.6 7 8.4 6 8.4-6"/></svg>
               moztabarafid@gmail.com
             </a>
-            <button class="btn btn--ghost btn--lg" id="copyEmail" type="button" data-email="moztabarafid@gmail.com">
+            <button class="btn btn--outline" id="copyEmail" type="button" data-email="moztabarafid@gmail.com">
               <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2.5"/><path d="M15 5.5A2.5 2.5 0 0 0 12.5 3H5.5A2.5 2.5 0 0 0 3 5.5v7A2.5 2.5 0 0 0 5.5 15"/></svg>
               Copy email
             </button>
@@ -557,33 +1006,74 @@
           <div class="contact__grid">
             <a class="contact__item" href="https://www.linkedin.com/in/moztabarafid" target="_blank" rel="noopener">
               <span class="contact__label">LinkedIn</span>
-              <span class="contact__value">/in/moztabarafid ↗</span>
+              <span class="contact__value">/in/moztabarafid <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
             </a>
             <a class="contact__item" href="https://github.com/moztabasun" target="_blank" rel="noopener">
               <span class="contact__label">GitHub</span>
-              <span class="contact__value">@moztabasun ↗</span>
+              <span class="contact__value">@moztabasun <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
             </a>
             <div class="contact__item">
               <span class="contact__label">Location</span>
               <span class="contact__value">Dhaka, Bangladesh</span>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
-  </main>
 
-  <footer class="footer">
-    <div class="wrap footer__inner">
-      <p class="footer__name">Md Moztaba Rafid <span>EEE · UAP</span></p>
-      <p class="footer__copy">© <span id="year">2026</span> Md Moztaba Rafid</p>
-      <div class="footer__links">
-        <a href="https://github.com/moztabasun" target="_blank" rel="noopener">GitHub</a>
-        <a href="https://www.linkedin.com/in/moztabarafid" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="#top">Back to top ↑</a>
-      </div>
+          <div class="contact__issue">
+            <span>ISSUED FOR · COLLABORATION / INTERNSHIP / QUESTIONS</span>
+            <span>2026 · DHAKA</span>
+          </div>
+        </section>
+
+        <!-- ===== FOOTER / TITLE BLOCK ===== -->
+        <footer class="footer">
+          <div class="titleblock">
+            <div class="titleblock__brand">
+              <span class="titleblock__mark" aria-hidden="true">MR</span>
+              <div>
+                <strong>Md Moztaba Rafid</strong>
+                <span>EEE · UAP · DHAKA</span>
+                <span lang="bn">ঢাকা, বাংলাদেশ</span>
+              </div>
+            </div>
+            <dl class="titleblock__fields">
+              <div><dt>Drawn by</dt><dd>Md Moztaba Rafid</dd></div>
+              <div><dt>Sheet</dt><dd>01 of 01</dd></div>
+              <div><dt>Scale</dt><dd>NTS</dd></div>
+              <div><dt>Project</dt><dd>Personal portfolio</dd></div>
+              <div><dt>Date</dt><dd>Nov 2026</dd></div>
+              <div><dt>Issue</dt><dd>01</dd></div>
+            </dl>
+          </div>
+
+          <div class="footer__bottom">
+            <p class="footer__copy">© <span id="year">2026</span> Md Moztaba Rafid</p>
+            <div class="footer__links">
+              <a href="https://github.com/moztabasun" target="_blank" rel="noopener">GitHub</a>
+              <a href="https://www.linkedin.com/in/moztabarafid" target="_blank" rel="noopener">LinkedIn</a>
+              <a href="#top" class="footer__top">Back to top <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg></a>
+            </div>
+          </div>
+        </footer>
+
+      </main>
+
+      <!-- Right margin -->
+      <aside class="rail rail--right" aria-label="Sheet index">
+        <nav class="rail__index" id="railIndex">
+          <a href="#top" data-label="Title" aria-label="Title"><span>00</span><i aria-hidden="true"></i></a>
+          <a href="#about" data-label="About" aria-label="About"><span>01</span><i aria-hidden="true"></i></a>
+          <a href="#experience" data-label="Experience" aria-label="Experience"><span>02</span><i aria-hidden="true"></i></a>
+          <a href="#projects" data-label="Projects" aria-label="Projects"><span>03</span><i aria-hidden="true"></i></a>
+          <a href="#skills" data-label="Skills" aria-label="Skills"><span>04</span><i aria-hidden="true"></i></a>
+          <a href="#education" data-label="Education" aria-label="Education"><span>05</span><i aria-hidden="true"></i></a>
+          <a href="#notes" data-label="Notes" aria-label="Notes"><span>06</span><i aria-hidden="true"></i></a>
+          <a href="#contact" data-label="Contact" aria-label="Contact"><span>07</span><i aria-hidden="true"></i></a>
+        </nav>
+        <span class="rail__scroll" id="scrollPct" aria-hidden="true">000%</span>
+      </aside>
+
     </div>
-  </footer>
+  </div>
 
   <!-- Toast -->
   <div class="toast" id="toast" role="status" aria-live="polite"></div>

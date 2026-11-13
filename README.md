@@ -37,16 +37,17 @@ The site covers my background, experience, projects, skills, certifications and 
 **Design**
 
 - Dark and light themes with the choice remembered in `localStorage`
-- Glassmorphism navbar and card surfaces over a layered gradient background
-- Sora and JetBrains Mono typefaces, fluid spacing and a mobile-first layout
-- Scroll progress bar and active-section highlighting in the navbar
+- A warm drafting-sheet visual system: paper, graphite ink, one signal red, crop marks and a title block
+- Saira Condensed, Archivo and B612 Mono typefaces, fluid spacing and a responsive layout
+- Scroll progress bar and active-section highlighting in the navbar and margin rail
 
 **Interaction**
 
-- Animated scroll reveals with per-group stagger
-- Subtle pointer-driven 3D tilt and glow on project cards
-- Accessible mobile menu with Escape-to-close and scroll locking
+- A one-time plotted draw-in of the hero's line-following-robot schematic
+- Staggered scroll reveals with reduced-motion support
+- Accessible mobile menu with a focus trap, Escape-to-close and scroll locking
 - Copy-email button with a toast confirmation
+- Animated signal paths on project detail plates
 
 **Accessibility & polish**
 
@@ -62,7 +63,7 @@ The site covers my background, experience, projects, skills, certifications and 
 | Markup | HTML5, semantic sections, JSON-LD person schema |
 | Styling | CSS3, custom properties, Grid and Flexbox, media queries |
 | Behavior | Vanilla JavaScript (ES6), IntersectionObserver, Clipboard API |
-| Type | Google Fonts — Sora, JetBrains Mono |
+| Type | Google Fonts — Saira Condensed, Archivo, B612 Mono |
 | Hosting | GitHub Pages |
 
 No dependencies to install and nothing to compile.
@@ -75,9 +76,12 @@ my portfolio/
 ├── css/
 │   └── style.css       # Theme tokens, layout, components, responsive rules
 ├── js/
-│   └── main.js         # Theme toggle, nav, mobile menu, reveals, tilt, copy
+│   └── main.js         # Theme toggle, nav, mobile menu, reveals, copy
 ├── images/
-│   └── sun.jpeg        # Profile photo
+│   ├── portrait.jpg    # Optimized profile photo
+│   └── sun.jpeg        # Original photo, used for Open Graph
+├── DESIGN.md           # Design system and visual guardrails
+├── PRODUCT.md          # Product truth, audience and constraints
 └── README.md
 ```
 
@@ -111,10 +115,11 @@ The site is served at <https://moztabasun.github.io/myportfolio/>.
 ## Customization
 
 - **Content** lives in `index.html`. Each section is a plain `<section>` element whose `id` matches its navbar link.
-- **Colors and glass values** are CSS custom properties at the top of `css/style.css` — `:root` for the dark theme, `[data-theme="light"]` for the light theme.
-- **Theme initialization** happens in the inline script in `index.html`, before first paint, so the correct theme is applied without a flash.
-- **Reveal animations** come from the `reveal` class. Elements with it start hidden until they scroll into view, so leave it off anything that must always be visible.
+- **Colors, type and spacing** are CSS custom properties at the top of `css/style.css`. `:root` holds the warm-paper light theme; `[data-theme="dark"]` overrides the tokens for the reverse plot.
+- **Theme initialization** happens in the inline script in `index.html`, before first paint, so the saved or system theme is applied without a flash.
+- **Reveal animations** come from the `reveal` class and only hide content when the `js` class is present. Leave it off anything that must always be visible.
 - **Metadata** — title, description, Open Graph tags, canonical URL and JSON-LD — sits in the `<head>` of `index.html` and should be updated if the site moves.
+- **Design rules** live in `DESIGN.md`; product facts and constraints live in `PRODUCT.md`.
 
 ## Accessibility
 

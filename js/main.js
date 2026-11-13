@@ -1,6 +1,7 @@
 /* =========================================================
    Md Moztaba Rafid — Portfolio interactions
-   Theme, nav state, mobile menu, reveals, tilt, copy email.
+   Theme, sheet progress, rails, mobile menu, reveals,
+   hero drawing, copy email.
    ========================================================= */
 
 (function () {
@@ -8,62 +9,144 @@
 
   const root = document.documentElement;
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const finePointer = window.matchMedia("(pointer: fine)").matches;
 
   const $ = (sel, ctx = document) => ctx.querySelector(sel);
   const $$ = (sel, ctx = document) => Array.from(ctx.querySelectorAll(sel));
+
+  const store = {
+    get(key) {
+      try { return window.localStorage.getItem(key); } catch (e) { return null; }
+    },
+    set(key, value) {
+      try { window.localStorage.setItem(key, value); } catch (e) { /* private mode */ }
+    }
+  };
 
   /* ---------------------------------------------------------
      Theme
      --------------------------------------------------------- */
   const themeToggle = $("#themeToggle");
+  const themeMeta = $('meta[name="theme-color"]');
 
-  function syncThemeButton() {
+  const THEME_COLOR = { light: "#ded4c1", dark: "#0a0a08" };
+
+  function syncThemeUI() {
     const isLight = root.getAttribute("data-theme") === "light";
+
+    root.style.colorScheme = isLight ? "light" : "dark";
+
     if (themeToggle) {
       themeToggle.setAttribute("aria-pressed", String(isLight));
       themeToggle.setAttribute("aria-label", isLight ? "Switch to dark theme" : "Switch to light theme");
     }
-    const meta = document.querySelector('meta[name="theme-color"]');
-    if (meta) meta.setAttribute("content", isLight ? "#f3f4f7" : "#07080c");
+
+    if (themeMeta) {
+      themeMeta.setAttribute("content", isLight ? THEME_COLOR.light : THEME_COLOR.dark);
+    }
+  }
+
+  function setTheme(next) {
+    root.setAttribute("data-theme", next);
+    store.set("theme", next);
+    syncThemeUI();
   }
 
   if (themeToggle) {
     themeToggle.addEventListener("click", () => {
-      const next = root.getAttribute("data-theme") === "light" ? "dark" : "light";
-      root.style.setProperty("color-scheme", next);
-      root.setAttribute("data-theme", next);
-      try { localStorage.setItem("theme", next); } catch (e) {}
-      syncThemeButton();
+      setTheme(root.getAttribute("data-theme") === "light" ? "dark" : "light");
     });
   }
 
-  syncThemeButton();
+  syncThemeUI();
+
+  // If the visitor has never chosen a theme, follow the system setting.
+  const schemeQuery = window.matchMedia("(prefers-color-scheme: light)");
+  if (schemeQuery.addEventListener) {
+    schemeQuery.addEventListener("change", (event) => {
+      if (store.get("theme")) return;
+      root.setAttribute("data-theme", event.matches ? "light" : "dark");
+      syncThemeUI();
+    });
+  }
 
   /* ---------------------------------------------------------
-     Navbar: shrink on scroll + progress bar
+     Sheet progress + active section
      --------------------------------------------------------- */
   const nav = $("#nav");
   const progressBar = $("#progressBar");
-  let scrollQueued = false;
+  const scrollPct = $("#scrollPct");
 
-  function onScroll() {
-    const y = window.scrollY || 0;
-    if (nav) nav.classList.toggle("is-stuck", y > 24);
-    if (progressBar) {
-      const max = document.documentElement.scrollHeight - window.innerHeight;
-      const pct = max > 0 ? Math.min(100, (y / max) * 100) : 0;
-      progressBar.style.width = pct + "%";
-    }
-    scrollQueued = false;
+  const navLinks = $$("#navLinks a");
+  const railLinks = $$("#railIndex a");
+
+  const sectionIds = ["top", "about", "experience", "projects", "skills", "education", "notes", "contact"];
+  const sections = sectionIds
+    .map((id) => document.getElementById(id))
+    .filter(Boolean);
+
+  let activeId = "";
+  let queued = false;
+
+  function paintActive(id) {
+    if (!id || id === activeId) return;
+    activeId = id;
+
+    navLinks.concat(railLinks).forEach((link) => {
+      const match = link.getAttribute("href") === "#" + id;
+      link.classList.toggle("is-active", match);
+      if (match) {
+        link.setAttribute("aria-current", "location");
+      } else {
+        link.removeAttribute("aria-current");
+      }
+    });
   }
 
-  window.addEventListener("scroll", () => {
-    if (!scrollQueued) {
-      scrollQueued = true;
-      window.requestAnimationFrame(onScroll);
+  function currentSection() {
+    const navH = nav ? nav.getBoundingClientRect().height : 0;
+    const line = navH + 46;
+    let current = sections.length ? sections[0].id : "";
+
+    sections.forEach((section) => {
+      if (section.getBoundingClientRect().top <= line) current = section.id;
+    });
+
+    // At the very bottom, the last section must win even if it is short.
+    if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2) {
+      const last = sections[sections.length - 1];
+      if (last) current = last.id;
     }
-  }, { passive: true });
+
+    return current;
+  }
+
+  function onScroll() {
+    const y = window.scrollY || window.pageYOffset || 0;
+
+    if (nav) nav.classList.toggle("is-stuck", y > 18);
+
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    const ratio = max > 0 ? Math.min(1, Math.max(0, y / max)) : 0;
+
+    if (progressBar) progressBar.style.width = (ratio * 100).toFixed(2) + "%";
+
+    if (scrollPct) {
+      scrollPct.textContent = String(Math.round(ratio * 100)).padStart(3, "0") + "%";
+    }
+
+    paintActive(currentSection());
+    queued = false;
+  }
+
+  function requestScrollUpdate() {
+    if (queued) return;
+    queued = true;
+    window.requestAnimationFrame(onScroll);
+  }
+
+  window.addEventListener("scroll", requestScrollUpdate, { passive: true });
+  window.addEventListener("resize", requestScrollUpdate);
+  window.addEventListener("load", requestScrollUpdate);
 
   onScroll();
 
@@ -72,53 +155,134 @@
      --------------------------------------------------------- */
   const burger = $("#burger");
   const mobileMenu = $("#mobileMenu");
+  const menuLinks = mobileMenu ? $$("a", mobileMenu) : [];
 
-  function closeMenu() {
-    if (!burger || !mobileMenu) return;
+  let menuOpen = false;
+  let returnFocus = null;
+
+  function menuFocusables() {
+    return [burger, themeToggle].concat(menuLinks).filter((el) => el && !el.hasAttribute("inert"));
+  }
+
+  function focusFirstInMenu() {
+    const first = menuLinks[0];
+    if (first) {
+      first.focus({ preventScroll: true });
+    }
+  }
+
+  function openMenu() {
+    if (!burger || !mobileMenu || menuOpen) return;
+    menuOpen = true;
+    returnFocus = document.activeElement;
+
+    burger.classList.add("is-open");
+    burger.setAttribute("aria-expanded", "true");
+    burger.setAttribute("aria-label", "Close menu");
+
+    mobileMenu.classList.add("is-open");
+    mobileMenu.removeAttribute("inert");
+    mobileMenu.setAttribute("aria-hidden", "false");
+
+    document.body.style.overflow = "hidden";
+
+    // Wait one frame so visibility has resolved before moving focus.
+    window.requestAnimationFrame(() => {
+      window.setTimeout(focusFirstInMenu, 60);
+    });
+  }
+
+  function closeMenu(restoreFocus) {
+    if (!burger || !mobileMenu || !menuOpen) return;
+    menuOpen = false;
+
     burger.classList.remove("is-open");
     burger.setAttribute("aria-expanded", "false");
     burger.setAttribute("aria-label", "Open menu");
+
     mobileMenu.classList.remove("is-open");
+    mobileMenu.setAttribute("inert", "");
     mobileMenu.setAttribute("aria-hidden", "true");
+
     document.body.style.overflow = "";
+
+    if (restoreFocus && returnFocus && typeof returnFocus.focus === "function") {
+      returnFocus.focus({ preventScroll: true });
+    }
+    returnFocus = null;
+  }
+
+  function onMenuKeydown(event) {
+    if (!menuOpen) return;
+
+    if (event.key === "Escape") {
+      event.preventDefault();
+      closeMenu(true);
+      return;
+    }
+
+    if (event.key !== "Tab") return;
+
+    const items = menuFocusables();
+    if (!items.length) return;
+
+    const first = items[0];
+    const last = items[items.length - 1];
+    const current = document.activeElement;
+
+    if (!items.includes(current)) {
+      event.preventDefault();
+      first.focus();
+      return;
+    }
+
+    if (event.shiftKey && current === first) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey && current === last) {
+      event.preventDefault();
+      first.focus();
+    }
   }
 
   if (burger && mobileMenu) {
     burger.addEventListener("click", () => {
-      const open = !burger.classList.contains("is-open");
-      burger.classList.toggle("is-open", open);
-      burger.setAttribute("aria-expanded", String(open));
-      burger.setAttribute("aria-label", open ? "Close menu" : "Open menu");
-      mobileMenu.classList.toggle("is-open", open);
-      mobileMenu.setAttribute("aria-hidden", String(!open));
-      document.body.style.overflow = open ? "hidden" : "";
+      if (menuOpen) {
+        closeMenu(true);
+      } else {
+        openMenu();
+      }
     });
 
-    $$("a", mobileMenu).forEach((link) => link.addEventListener("click", closeMenu));
-
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") closeMenu();
+    menuLinks.forEach((link) => {
+      link.addEventListener("click", () => closeMenu(false));
     });
 
-    window.addEventListener("resize", () => {
-      if (window.innerWidth > 900) closeMenu();
-    });
+    document.addEventListener("keydown", onMenuKeydown);
+
+    const wideQuery = window.matchMedia("(min-width: 1081px)");
+    const onWide = (event) => {
+      if (event.matches) closeMenu(false);
+    };
+    if (wideQuery.addEventListener) wideQuery.addEventListener("change", onWide);
+    else if (wideQuery.addListener) wideQuery.addListener(onWide);
   }
 
   /* ---------------------------------------------------------
-     Scroll reveal (staggered per group)
+     Reveal on scroll (staggered within each group)
      --------------------------------------------------------- */
   const revealItems = $$(".reveal");
 
   const groups = new Map();
   revealItems.forEach((el) => {
-    const parent = el.parentElement;
+    const parent = el.parentElement || document.body;
     if (!groups.has(parent)) groups.set(parent, []);
     groups.get(parent).push(el);
   });
+
   groups.forEach((items) => {
-    items.forEach((el, i) => {
-      el.style.setProperty("--delay", Math.min(i * 80, 420) + "ms");
+    items.forEach((el, index) => {
+      el.style.setProperty("--delay", Math.min(index * 70, 350) + "ms");
     });
   });
 
@@ -133,88 +297,63 @@
           revealObserver.unobserve(entry.target);
         });
       },
-      { threshold: 0.12, rootMargin: "0px 0px -8% 0px" }
+      { threshold: 0.08, rootMargin: "0px 0px -6% 0px" }
     );
 
     revealItems.forEach((el) => revealObserver.observe(el));
   }
 
   /* ---------------------------------------------------------
-     Active section in navbar
+     Hero drawing draws itself in
      --------------------------------------------------------- */
-  const navLinks = $$(".nav__links a");
-  const sections = navLinks
-    .map((link) => document.querySelector(link.getAttribute("href")))
-    .filter(Boolean);
+  const drawings = $$(".lfr");
 
-  const hero = document.querySelector("#top");
-  if (hero && !sections.includes(hero)) sections.unshift(hero);
-
-  if ("IntersectionObserver" in window && sections.length) {
-    const sectionObserver = new IntersectionObserver(
+  if (reduceMotion || !("IntersectionObserver" in window)) {
+    drawings.forEach((el) => el.classList.add("is-drawn"));
+  } else {
+    const drawObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (!entry.isIntersecting) return;
-          navLinks.forEach((link) => {
-            link.classList.toggle("is-active", link.getAttribute("href") === "#" + entry.target.id);
-          });
+          entry.target.classList.add("is-drawn");
+          drawObserver.unobserve(entry.target);
         });
       },
-      { rootMargin: "-45% 0px -50% 0px", threshold: 0 }
+      { threshold: 0.2 }
     );
-    sections.forEach((section) => sectionObserver.observe(section));
-  }
 
-  /* ---------------------------------------------------------
-     Project cards: glow position + subtle 3D tilt
-     --------------------------------------------------------- */
-  if (finePointer && !reduceMotion) {
-    $$(".tilt").forEach((card) => {
-      card.addEventListener("pointermove", (e) => {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-
-        card.style.setProperty("--mx", x + "px");
-        card.style.setProperty("--my", y + "px");
-
-        const rx = ((y / rect.height) - 0.5) * -5;
-        const ry = ((x / rect.width) - 0.5) * 5;
-        card.style.transform = `perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-4px)`;
-      });
-
-      card.addEventListener("pointerleave", () => {
-        card.style.transform = "";
-      });
-    });
+    drawings.forEach((el) => drawObserver.observe(el));
   }
 
   /* ---------------------------------------------------------
      Copy email + toast
      --------------------------------------------------------- */
   const toast = $("#toast");
+  const copyBtn = $("#copyEmail");
   let toastTimer = null;
 
   function showToast(message) {
     if (!toast) return;
     toast.textContent = message;
     toast.classList.add("is-visible");
-    clearTimeout(toastTimer);
-    toastTimer = setTimeout(() => toast.classList.remove("is-visible"), 2600);
+    window.clearTimeout(toastTimer);
+    toastTimer = window.setTimeout(() => toast.classList.remove("is-visible"), 2800);
   }
 
   async function copyText(text) {
-    // Modern API first — guarded by a timeout so a stalled permission
-    // prompt (common on file:// pages) never blocks the UI.
+    // Modern API first, with a timeout so a stalled permission prompt
+    // (common on file:// pages) never blocks the interface.
     if (navigator.clipboard && navigator.clipboard.writeText) {
       try {
         await Promise.race([
           navigator.clipboard.writeText(text),
-          new Promise((_, reject) => setTimeout(() => reject(new Error("clipboard timeout")), 1200))
+          new Promise((resolve, reject) => {
+            window.setTimeout(() => reject(new Error("clipboard timeout")), 1200);
+          })
         ]);
         return true;
       } catch (e) {
-        /* fall through to legacy path */
+        /* fall through to the legacy path */
       }
     }
 
@@ -236,12 +375,11 @@
     }
   }
 
-  const copyBtn = $("#copyEmail");
   if (copyBtn) {
     copyBtn.addEventListener("click", async () => {
-      const email = copyBtn.dataset.email || "moztabarafid@gmail.com";
+      const email = copyBtn.getAttribute("data-email") || "moztabarafid@gmail.com";
       const ok = await copyText(email);
-      showToast(ok ? "Email copied." : "Copy failed — email is " + email);
+      showToast(ok ? "Email copied — " + email : "Copy failed. Email: " + email);
     });
   }
 
